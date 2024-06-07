@@ -1,0 +1,489 @@
+Extra:- class,getDetails,displayDetails
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication5
+{
+    class Program
+    {
+        int id;
+        string name;
+        int age;
+        double weight;
+        double height;
+        static void Main(string[] args)
+        {
+            
+            Program P = new Program();
+            P.getDetails();
+            P.display();
+           
+        }
+
+        void getDetails()
+        {
+            Console.WriteLine("Enter id:");
+            id = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter Name:");
+            name = Convert.ToString(Console.ReadLine());
+            Console.WriteLine("Enter age:");
+            age = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter weight:");
+            weight = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Enter height:");
+            height = Convert.ToDouble(Console.ReadLine());
+        }
+
+        void display()
+        {
+            Console.WriteLine("Id:" + id);
+            Console.WriteLine("Name:" + name);
+            Console.WriteLine("Age:" + age);
+            Console.WriteLine("Weight:" + weight);
+            Console.WriteLine("Height:" + height);
+        }
+    }
+}
+
+
+
+-------------------------------------------------------------------------------------------
+Lab-3 Prog-1
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Candidate c = new Candidate();
+            c.getDetails();
+            c.display();
+        }
+    }
+    class Candidate
+    {
+        int id;
+        string name;
+        int age;
+        double weight;
+        double height;
+
+        void getDetails()
+        {
+            Console.WriteLine("Enter id:");
+            id = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter Name:");
+            name = Convert.ToString(Console.ReadLine());
+            Console.WriteLine("Enter age:");
+            age = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter weight:");
+            weight = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Enter height:");
+            height = Convert.ToDouble(Console.ReadLine());
+        }
+
+        void display()
+        {
+            Console.WriteLine("Id:" + id);
+            Console.WriteLine("Name:" + name);
+            Console.WriteLine("Age:" + age);
+            Console.WriteLine("Weight:" + weight);
+            Console.WriteLine("Height:" + height);
+        }
+    }
+}
+
+------------------------------------------------------------------------------------------
+
+Prog-2
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication6
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Staff[] st = new Staff[5];
+           for(int i=0;i<5;i++){
+               st[i] = new Staff();
+               st[i].getDetails();
+               st[i].display();
+           }
+        }
+    }
+
+    public class Staff{
+        string name, post;
+
+        public void getDetails()
+        {
+            Console.WriteLine("Enter name:");
+            name = Convert.ToString(Console.ReadLine());
+            Console.WriteLine("Enter post:");
+            post = Convert.ToString(Console.ReadLine());
+        }
+
+        public void display()
+        {
+            
+            if (post == "hod" || post == "HOD")
+            {
+                Console.WriteLine("Name:"+name,"Post:"+post);
+            }
+        }
+    }
+}
+
+---------------------------------------------------------------------------
+
+Prog-3
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication7
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Account a = new Account();
+            a.getDetails();
+            a.display();
+        }
+    }
+    class Account {
+        int accNo;
+        string userName;
+        string email;
+        int accBal;
+        string accType;
+
+        public void getDetails()
+        {
+            Console.WriteLine("Enter AccNumber:");
+            accNo = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter User Name:");
+            userName = Convert.ToString(Console.ReadLine());
+            Console.WriteLine("Enter email:");
+            email = Convert.ToString(Console.ReadLine());
+            Console.WriteLine("Enter accBal:");
+            accBal = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter accType:");
+            accType = Convert.ToString(Console.ReadLine());
+        }
+        public void display()
+        {
+            Console.WriteLine("accNumber:" + accNo);
+            Console.WriteLine("userName:" + userName);
+            Console.WriteLine("email:" + email);
+            Console.WriteLine("accBal:" + accBal);
+            Console.WriteLine("accType:" + accType);
+        }
+ 
+    }
+}
+
+--------------------------------------------------------------------------------------
+
+Prog-4
+
+﻿using System;
+
+namespace ConsoleApp3
+{
+    internal class Class4
+    {
+        //Enrollment_No, Student_Name, Semester, CPI and SPI
+        double ern,spi,cpi;
+        string name;
+            int sem;
+        public Class4(double ern, string name, int sem,double spi,double cpi)
+        {
+
+            this.ern = ern;
+            this.spi = spi;
+            this.cpi = cpi;
+            this.name = name;
+            this.sem = sem;
+        }
+
+        public void memeber()
+        {
+            Console.WriteLine("===================================\nEnrollment No:{0}\nName : {1}\nSemester : {2}\nCPI : {3}\nSPI : {4}",ern,name,sem,cpi,spi);
+        }
+    }
+}
+
+
+-------------------------------------------------------------------------------------
+Prog-5
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication9
+{
+    class Program
+    {
+        
+        static void Main(string[] args)
+        {
+            Salary s = new Salary(30,100);
+
+        }
+    }
+    
+    public class Salary{
+        public Salary(int DA,int HRA){
+         
+            Console.WriteLine("Enter TA:");
+            int TA = Convert.ToInt32(Console.ReadLine());
+            int sal = TA + DA + HRA;
+            Console.WriteLine("Salary:" + sal);
+        }
+    }
+}
+
+----------------------------------------------------------------------------------
+
+program-6
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication10
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Distance d = new Distance(20,30);
+            d.addition();
+        }
+    }
+    public class Distance
+    {
+        double dist1, dist2, dist3;
+        public Distance(double a, double b)
+        {
+            dist1 = a;
+            dist2 = b;
+        }
+        public void addition()
+        {
+            dist3 = dist1 + dist2;
+            Console.WriteLine("Sum:" + dist3);
+        }
+    }
+}
+
+-----------------------------------------------------------------------------
+
+
+
+program-7
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication11
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Area a = new Area(2, 3);
+        }
+    }
+    public class Area
+    {
+        int a;
+        public Area(int len, int breadth)
+        {
+            a = len * breadth;
+            Console.WriteLine("Area=" + a);
+        }
+    }
+}
+
+-----------------------------------------------------------------------------------
+
+program-8
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication13
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Table t = new Table();
+            t.display();
+        }
+    }
+    public class Furniture
+    {
+        public String material;
+        public double price;
+    }
+    public class Table:Furniture
+    {
+        double height,surface_area;
+
+        public void display()
+        {
+            Console.WriteLine("Enter material:");
+            material = Console.ReadLine();
+            Console.WriteLine("Enter price:");
+            price = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Material= {0} , price = {1}",material,price);
+        }
+    }
+}
+
+--------------------------------------------------------------------------------------------
+
+program-9
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication14
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Interest i = new Interest();
+            i.get();
+            i.display();
+        }
+    }
+
+    public class Acc_Details
+    {
+        public int p, r, t;
+
+        public void get()
+        {
+            Console.WriteLine("Enter p:");
+            p = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter r:");
+            r = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter t:");
+            t = Convert.ToInt32(Console.ReadLine());
+        }
+    }
+    public class Interest:Acc_Details
+    {
+        int interest;
+        public void display()
+        {
+            interest = (p * r * t) / 100;
+            Console.WriteLine("Interest="+interest);
+        }
+    }
+}
+
+-------------------------------------------------------------------------------
+
+Prog-10
+
+﻿using System;
+
+namespace ConsoleApp3
+{
+    internal class Class10 : Salary,Gross
+    {
+        string name;
+        double hra, ta, da;
+        static double  salary;
+        public Class10()
+        {
+        }
+        public void get_detail()
+        {
+            Console.WriteLine("Enter Name : ");
+            name = Console.ReadLine();
+            Console.WriteLine("Enter HRA : ");
+            hra = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Enter TA :");
+            ta = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Enter DA : ");
+            da = Convert.ToDouble(Console.ReadLine());
+        }
+        public void basic_sel() 
+        {
+            salary = ta + da + hra;
+            Console.WriteLine("Basic Salary : {0}", salary);
+        }
+        public void display_sel() {
+            salary += 15;
+            Console.WriteLine("NAME : {1}\nSALARY : {0}", salary, name);
+
+        }
+        public void gross_sel() {
+            salary -= 10;
+            Console.WriteLine("Gross Salary : {0}", salary);
+        }
+    }
+    public interface Salary
+    {
+        void display_sel();
+    }
+    public interface Gross
+    {
+
+         void gross_sel();
+      
+    }
+}
+
+
+

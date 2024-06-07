@@ -1,0 +1,309 @@
+Lab-5 Prog-1
+
+﻿using System;
+
+namespace ConsoleApp5
+{
+    internal class Class1
+    {
+        public Class1()
+        {
+        }
+
+        public void add(int v1, int v2)
+        {
+            Console.WriteLine("ANS OF Integer Value : {0}",v1+v2);
+        }
+
+        public void add(double v1, double v2)
+        {
+            Console.WriteLine("ANS OF Float Value : {0}",v1+v2);
+        }
+    }
+}
+
+--------------------------------------------------------------------------------------
+
+Prog-2
+
+﻿using System;
+
+namespace ConsoleApp5
+{
+    internal class Class2
+    {
+        public Class2()
+        {
+        }
+
+        internal void area(int v)
+        {
+            Console.WriteLine("Area Of Square : {0}", v * v);
+        }
+
+        internal void area(int v1, int v2)
+        {
+            Console.WriteLine("Area OF Triangle : {0}", 0.5 * v1 * v2);
+        }
+    }
+}
+
+-----------------------------------------------------------------------------------------
+
+Prog-3
+
+﻿using System;
+
+namespace ConsoleApp5
+{
+    internal class Class3
+    {
+        public Class3()
+        {
+        }
+
+        internal void area(int v1, int v2)
+        {
+            Console.WriteLine(v1 + v2);
+        }
+
+        internal void area(string v1, int v2)
+        {
+            if (v1 == "Circle") Console.WriteLine("Area : {0}", 3.14 * v2 * v2);
+            else Console.WriteLine("Ans : {0}", v2 * v2);
+        }
+
+        internal void area(double v1, double v2)
+        {
+            Console.WriteLine("Ans:{0}",v1* v2);
+        }
+    }
+}
+
+------------------------------------------------------------------------------
+
+Prog-4
+
+﻿using System;
+
+namespace ConsoleApp5
+{
+    public class Class4
+    {
+        public double i, p, r;
+        public Class4()
+        {
+            i = 1;
+            p = 1;
+            r = 1;
+        }
+
+        public void calculateInterest()
+        {
+            Console.WriteLine("Interst : {0}", (i + p + r) / 100);
+        }
+    }
+    public class HDFC : Class4
+    {
+        public HDFC() 
+        {
+            i = 1;
+            p = 1;
+            r = 1;
+        }
+        public void calculateInterest()
+        {
+            Console.WriteLine("Interst  in HDFC: {0}", (i + p + r) / 100);
+        }
+    }
+    public class SBI : Class4
+    {
+        public SBI()
+        {
+            i = 2; p = 2;r= 2;
+        }
+        public void calculateInterest()
+        {
+            Console.WriteLine("Interst in SBI : {0}", (i + p + r) / 100);
+        }
+    }
+    public class ICICI : Class4
+    {
+        public ICICI()
+        {
+            i = 3;p = 3;r = 3;
+        }
+        public void calculateInterest()
+        {
+            Console.WriteLine("Interst in ICICI : {0}", (i + p + r) / 100);
+        }
+    }
+}
+
+------------------------------------------------------------------------------------
+
+Prog-5
+
+﻿using System;
+
+namespace ConsoleApp5
+{
+    internal class Class5
+    {
+        public Class5()
+        {
+        }
+
+        internal void hospitalDetails()
+        {
+            Console.WriteLine("This is the Main Hospital");
+        }
+    }
+    class Apollo : Class5 
+    {
+        public Apollo()
+        {
+
+        }
+        public void hospitalDetails()
+        {
+            Console.WriteLine("This is the Apollo Hospital");
+        }
+    }
+    class Wockhardt : Class5
+    {
+        public Wockhardt()
+        {
+
+        }
+        public void hospitalDetails()
+        {
+            Console.WriteLine("This is the Wockhardt Hospital");
+        }
+    }
+
+    class Gokul_Superspeciality : Class5
+    {
+        public Gokul_Superspeciality()
+        {
+
+        }
+        public void hospitalDetails()
+        {
+            Console.WriteLine("This is the Gokul_Superspeciality Hospital");
+        }
+
+    }
+}
+
+---------------------------------------------------------------------------------------------
+
+Prog-6
+
+﻿using System;
+namespace ConsoleApp5
+{
+    public  class Class6
+    {
+        public delegate void factorial (int a);
+        int mul = 1;
+        public Class6()
+        {
+        }
+        public void fact(int a)
+        {
+            for(int i = 1;i<= a; i++)
+            {
+                mul *= i;
+            }
+            Console.WriteLine("Factorial : {0}", mul);
+        }
+    }
+}
+
+-----------------------------------------------------------------------------------------
+
+Prog-7
+
+﻿using System;
+namespace ConsoleApp5
+{
+    internal class Class7
+    {
+        public delegate void TrafficDel();
+        public Class7()
+        {
+        }
+        public  void yellow()
+        {
+            Console.WriteLine("Yellow Light Signal To Get Ready");
+        }
+        public  void green()
+        {
+            Console.WriteLine("Green Light Signal To Go");
+        }
+        public  void red()
+        {
+            Console.WriteLine("Red Light Signal To Stop");
+        }
+
+    }
+
+}
+
+-----------------------------------------------------------------------------------
+
+Prog-8
+
+﻿using System;
+namespace ConsoleApp5
+{
+    internal class Class8
+    {
+        //public delegate T calculate<T>(T a, T b );
+        public delegate T calculate<T>(params object[] parameters );
+        public Class8()
+        {
+        }
+        //public void add(int a,int b)
+        //{
+        //    Console.WriteLine("SUM : {0}", a + b);
+        //}
+        //public void add(double a,double b)
+        //{ Console.WriteLine("SUM : {0}",a + b); }
+        public void all(params object[] parameters)
+        {
+            if (parameters == null || parameters.Length == 0)
+            {
+                Console.WriteLine("Enter a Parameter like <Value> <operrtor> <value>");
+            }
+            else if (parameters[0] is int && parameters[1] is string && parameters[2] is int )
+            {
+                if ((string)parameters[1] == "+")
+                {
+                    Console.WriteLine("SUM : {0}", (int)parameters[0] + (int)parameters[1]);
+                }
+                else if ((string)parameters[1] == "-")
+                {
+                    Console.WriteLine("SUB : {0}", (int)parameters[0] - (int)parameters[1]);
+                }
+                else if ((string)parameters[1] == "*")
+                {
+                    Console.WriteLine("MUL : {0}", (int)parameters[0] * (int)parameters[1]);
+                }
+                else if ((string)parameters[1] == "/")
+                {
+                    Console.WriteLine("DIV : {0}", (int)parameters[0] / (int)parameters[1]);
+                }
+                else
+                {
+                    Console.WriteLine("Enter a Parameter like <Value> <operrtor> <value>");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Enter a Parameter like <Value> <operrtor> <value>");
+            }
+        }
+    }
+}

@@ -1,0 +1,252 @@
+Lab-2 Prog-1
+
+﻿using System;
+
+namespace ConsoleApp2
+{
+    internal class Class1
+    {
+        double height, weight;
+        public Class1()
+        {
+        }
+        public void getDetails()
+        {
+            Console.WriteLine("Enter Ur Height(inches) :");
+            height = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Enter Ur Weight(pounds)");
+            weight = Convert.ToDouble(Console.ReadLine());
+        }
+        public void bmi() 
+        {
+            Console.WriteLine("BMI : {0}", (weight * 0.45359237)/(height * 0.0254)*(height * 0.0254));
+        }
+    }
+}
+
+---------------------------------------------------------------------------------------------------------------------
+
+Prog-2
+
+﻿using System;
+
+namespace ConsoleApp2
+{
+    internal class Class2
+    {
+        int sum = 0;
+        public Class2()
+        {
+        }
+        public void getDetails()
+        {
+            int[] marks =  new int[5];
+           for(int i = 0; i < 5; i++)
+            {
+                Console.WriteLine("Enter Subject {0} Marks(100) : ", i + 1);
+                marks[i] = Convert.ToInt32(Console.ReadLine());
+            }
+           foreach(int i in marks)
+            {
+                sum += i;
+            }
+        }
+
+        public void grade()
+        {
+            if((sum / 5) >= 60)
+            {
+                Console.WriteLine("First Class");
+            }
+            else if((sum / 5) >=50 && (sum / 5) <= 59)
+            {
+                Console.WriteLine("Second Class");
+            }
+            else if((sum/5)>=40 && (sum / 5) <= 49)
+            {
+                Console.WriteLine("Third Class");
+            }
+            else
+            {
+                Console.WriteLine("Poor Grade");
+            }
+        }
+    }
+}
+
+-------------------------------------------------------------------------------------
+
+Prog-3
+
+﻿using System;
+
+namespace ConsoleApp2
+{
+    internal class Class3
+    {
+        int a;
+        bool b = true;
+        public Class3()
+        {
+        }
+        public void prime()
+        {
+            Console.WriteLine("Enter No:");
+            a = Convert.ToInt32(Console.ReadLine());
+            for(int i = 2; i < a/2; i++) 
+            { 
+                if(a%i == 0)
+                {
+                    b = !b; ;
+                    break;
+                }
+            }
+            if (b)
+            {
+                Console.WriteLine("Prime");
+            }
+            else Console.WriteLine("Not Prime");
+        }
+    }
+}
+
+---------------------------------------------------------------------------------
+
+Prog-4
+
+﻿using System;
+
+namespace ConsoleApp2
+{
+    internal class Class4
+    {
+        public Class4()
+        {
+        }
+        public void leapYear()
+        {
+            Console.WriteLine("Enter Year");
+            int y = Convert.ToInt32(Console.ReadLine());
+            if(((y%4 == 0 )&&(y%100 != 0)) || (y % 400 == 0))
+            {
+                Console.WriteLine("Leap Year");
+            }
+            else
+            {
+                Console.WriteLine("Not Leap Year");
+            }
+        }
+    }
+}
+
+---------------------------------------------------------------------------
+
+Prog-5
+
+﻿using System;
+
+namespace ConsoleApp2
+{
+    internal class Class5
+    {
+        int sum = 0,temp1 =0,temp2 = 1;
+        public Class5()
+        {
+        }
+        public void fibbonaci()
+        {
+            Console.WriteLine("Enter Term of Fibbonacci Series : ");
+            int n = Convert.ToInt32(Console.ReadLine());
+            Console.Write("{0},{1},",temp1,temp2);
+            for(int i = 2; i < n; i++)
+            {
+                sum = temp1 + temp2;
+                Console.Write("{0},",sum);
+                temp1 = temp2;
+                temp2 = sum;
+
+            }
+            Console.WriteLine("...");
+        }
+
+
+    }
+}
+
+-------------------------------------------------------------------------
+
+Prog-6
+
+﻿using System;
+using System.Linq;
+
+namespace ConsoleApp2
+{
+    internal class Class6
+    {
+        public Class6()
+        {
+        }
+        public void binary()
+        {
+            Console.WriteLine("Enter NO:");
+            int n = Convert.ToInt32(Console.ReadLine());
+            int temp = n;
+            string rem="";
+            while (temp != 0)
+            {
+                rem = rem +Convert.ToString(temp%2); 
+                temp = temp / 2;
+            }
+            char[] arr = rem.ToCharArray();
+            Array.Reverse(arr);
+            string rev = new string(arr);
+            Console.WriteLine(rev);
+        }
+    }
+}
+
+------------------------------------------------------------------------
+
+Prog-7
+
+﻿using System;
+
+namespace ConsoleApp2
+{
+    internal class Class7
+    {
+        public Class7()
+        {
+        }
+        public int numenetor(int n )
+        {
+            int mul = 1;
+            for(int i = 1; i <=n; i++)
+            {
+                mul *= i;
+            }
+            return ( mul );
+        }
+        public int denomenetor(int n ,int r) 
+        { 
+            int mul = 1;
+            int m = n - r;
+            for(int i = 1; i <= m; i++)
+            {
+                mul *= i;
+            }
+            return mul ;
+        }
+        public void permutation()
+        {
+            Console.WriteLine("Enter n(nPr):");
+            int n = Convert.ToInt32( Console.ReadLine() );
+            Console.WriteLine("Enter r(nPr):");
+            int r = Convert.ToInt32( Console.ReadLine() );
+            int a = numenetor( n );
+            int b = denomenetor(n,r);
+            Console.WriteLine("ANS:{0}",(a/b));
+        }
+    }
+}

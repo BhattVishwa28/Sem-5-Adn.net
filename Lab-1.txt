@@ -1,0 +1,324 @@
+Lab-1 Prog-1
+
+Prog-2
+
+﻿using System;
+
+namespace ConsoleApp1
+{
+    internal class Class1
+    {
+        static int a, b;
+        public Class1()
+        {
+        }
+        public void getDetails()
+        {
+            Console.WriteLine("Enter NO:");
+             a  = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter NO:");
+             b  = Convert.ToInt32(Console.ReadLine());   
+        }
+        public void printDetails()
+        {
+            Console.WriteLine("{0},{1}",a,b);
+        }
+    }
+}
+
+---------------------------------------------------------------------------------------
+
+Prog-3
+
+﻿using System;
+
+namespace ConsoleApp1
+{
+    internal class Class2
+    {
+       static String n, c;
+        public Class2()
+        {
+           
+        }
+        public void getDetail()
+        {
+            Console.WriteLine("Enter Your Name :");
+            n = Console.ReadLine();
+            Console.WriteLine("Enter Your Contry Name :");
+            c = Console.ReadLine();
+
+        }
+        public void setDetail()
+        {
+            Console.WriteLine("Hello {0} from {1}", n, c);
+        }
+    }
+}
+
+---------------------------------------------------------------------------------
+
+Prog-4
+
+﻿using System;
+
+namespace ConsoleApp1
+{
+    internal class Class3
+    {
+        double l, w;
+        public Class3(double l, double w)
+        {
+            this.l = l; 
+            this.w = w;
+        }
+
+        public Class3()
+        {
+            this.l = 1;
+            this.w = 1;
+        }
+        public void areaRectangular()
+        {
+            Console.WriteLine(l * w);
+        }
+    }
+}
+
+----------------------------------------------------------------------------------
+
+Prog-5
+
+﻿using System;
+
+namespace ConsoleApp1
+{
+    internal class Class4
+    {
+        double lr, wr, rc, ls;
+        public Class4()
+        {
+        }
+        public void getDetils()
+        {
+            Console.WriteLine("Enter Lenght for Ractangle::");
+            lr = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Enter Width for Ractangle :");
+            wr = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Enter Radius For Circle:");
+            rc = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Enter Length for Square :");
+            ls = Convert.ToDouble(Console.ReadLine());
+        }
+        public void areaOfRactangle()
+        {
+            Console.WriteLine("Area OF Ractangle :{0}", lr * wr);
+        }
+        public void areaOfCircle()
+        {
+            Console.WriteLine("Area OF Circle :{0}",3.14 * rc * rc );
+        }
+        public void areaOfSquare()
+        {
+            Console.WriteLine("Area OF Square :{0}",ls*ls);
+        }
+    }
+}
+
+---------------------------------------------------------------------------------------------
+
+Prog-6
+
+﻿using System;
+
+namespace ConsoleApp1
+{
+    internal class Class5
+    {
+        double c, f;
+        public Class5()
+        {
+        }
+        public void getDetails()
+        {
+            Console.WriteLine("Enter Celcius:");
+            c = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Enter Fehranhit:");
+            f = Convert.ToDouble(Console.ReadLine());
+        }
+        public void ctof()
+        {
+            Console.WriteLine("Fehranhit:{0}",(c * 9 / 5) + 32);
+        }
+        public void ftoc()
+        {
+            Console.WriteLine("Celcius :{0}", ((f - 32) * 5) / 9);
+        }
+    }
+}
+
+--------------------------------------------------------------------------------------------
+
+Prog-7
+
+﻿using System;
+
+namespace ConsoleApp1
+{
+    internal class Class6
+    {
+        double p, r, n;
+        public Class6()
+        {
+            
+        }
+        public void getDetails()
+        {
+            Console.WriteLine("Enter P :");
+            p = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Enter R :");
+            r = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Enter N :");
+            n = Convert.ToDouble(Console.ReadLine());
+        }
+
+        public void intrest() 
+        {
+            Console.WriteLine("Simple Intrest : {0}", (p * r * n) / 100);
+        }
+    }
+}
+
+----------------------------------------------------------------------------------------------------
+
+Prog-8
+
+﻿using System;
+
+namespace ConsoleApp1
+{
+    internal class Class7
+    {
+        double a, b;
+        string op;
+        public Class7()
+        {
+        }
+        public void getDetails()
+        {
+            Console.WriteLine("Enter A:");
+            a = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Enter Opration :");
+            op = Console.ReadLine();
+            Console.WriteLine("Enter B:");
+            b = Convert.ToDouble(Console.ReadLine());
+
+        }
+        public void calci()
+        {
+            if (op == "+")
+            {
+                Console.WriteLine("ANS : {0}",a+b);
+            }
+            else if (op == "-")
+            {
+                Console.WriteLine("ANS : {0}", a - b);
+            }
+            else if(op == "*")
+            {
+                Console.WriteLine("ANS : {0}", a * b);
+            }
+            else if (op == "/")
+            {
+                if (b != 0)
+                {
+                    Console.WriteLine("ANS : {0}", a / b);
+                }
+                else
+                {
+                    Console.WriteLine("Can't divide by ZERO");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Please Enter Valid Opration ( +,-,,*,/)");
+            }
+        }
+    }
+}
+
+--------------------------------------------------------------------------------------------------
+
+Prog-9
+
+﻿using System;
+
+namespace ConsoleApp1
+{
+    internal class Class8
+    {
+        int a, b, c;
+        public Class8()
+        {
+        }
+        public void getDetail()
+        {
+            Console.WriteLine("Enetr A:");
+            a = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enetr B:");
+            b = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enetr C:");
+            c = Convert.ToInt32(Console.ReadLine());
+        }
+        public void maxOf3()
+        {
+            if (a > b && a>c)
+            {
+                Console.WriteLine("Maximum :{0}",a);
+            }
+            else if(b > c && b>a)
+            {
+                Console.WriteLine("Maximum :{0}", b);
+            }
+            else
+            {
+                Console.WriteLine("Maximum:{0}", c);
+            }
+        }
+    }
+}
+
+----------------------------------------------------------------------------------------
+
+Prog-10
+
+﻿using System;
+
+namespace ConsoleApp1
+{
+    internal class Class9
+    {
+        int a, b;
+        public Class9()
+        {
+        }
+        public void getDetail()
+        {
+            Console.WriteLine("Enetr A:");
+            a = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enetr B:");
+            b = Convert.ToInt32(Console.ReadLine());
+            
+        }
+        public void swap()
+        {
+            Console.WriteLine("Before Swapping : {0},{1}", a, b);
+            a = a + b;
+            b = a - b;
+            a = a - b;
+            Console.WriteLine("After Swapping : {0},{1}",a,b);
+        }
+
+       
+    }
+}

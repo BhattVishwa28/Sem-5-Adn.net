@@ -1,0 +1,360 @@
+Lab-4  Prog-1
+
+﻿using System;
+
+namespace ConsoleApp4
+{
+    internal class Class1
+    {
+        public Class1()
+        {
+        }
+        public void getError()
+        {
+            try
+            {
+                Console.WriteLine("Enter A :");
+                int a = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Enter B :");
+                int b = Convert.ToInt32(Console.ReadLine());
+                if (b!=0)
+                {
+                    Console.WriteLine("ANS :{0}", a / b);
+                }
+                else
+                {
+                    throw new DivideByZeroException();
+                }
+
+            }
+            catch (DivideByZeroException e) {
+            Console.WriteLine(e.ToString());
+            }
+        }
+    }
+}
+
+--------------------------------------------------------------------------------------
+
+Prog-2
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication24
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] a = new int[5];
+            for (int i = 0; i < 5; i++)
+            {
+                Console.WriteLine("element is {0}",i + 1);
+                a[i] = Convert.ToInt32(Console.ReadLine());
+            }
+            try
+            {
+                Console.WriteLine(a[10]);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+    }
+}
+
+
+-------------------------------------------------------------------------
+
+
+Prog-3
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication25
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter any number:");
+            int n = Convert.ToInt32(Console.ReadLine());
+            if (n % 2 != 0)
+            {
+                throw new Exception("n is not an even number");
+            }
+        }
+    }
+}
+
+-----------------------------------------------------------------------------
+
+
+Prog-4
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication26
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Calculate c = new Calculate();
+            c.SumOfTwo(2,3);
+            c.SumOfThree(2,3,4);
+        }
+        public abstract class Sum
+        {
+            public abstract void SumOfTwo(int a, int b);
+
+            public abstract void SumOfThree(int a, int b, int c);
+            
+        }
+
+        public class Calculate : Sum
+        {
+            public override void SumOfTwo(int a, int b)
+            {
+                int ans_1 = a + b;
+                Console.WriteLine("Sum of two numbers:" + ans_1);
+            }
+            public override void SumOfThree(int a, int b, int c)
+            {
+                int ans_2 = a + b + c;
+                Console.WriteLine("Sum of three numbers:" + ans_2);
+            }
+        }
+    }
+}
+
+-----------------------------------------------------------------------------------------
+
+Prog-5
+
+
+﻿using System;
+
+namespace ConsoleApp4
+{
+    public interface Calculate2
+    {
+         void addition();
+        void substraction();
+    }
+    internal class Class5 : Calculate2
+    {
+        public static int a, b;
+        public Class5()
+        {
+        }
+        public void getDetails()
+        {
+            Console.WriteLine("Enter A :");
+             a = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter B :");
+             b = Convert.ToInt32(Console.ReadLine());
+        }
+       public  void addition()
+        {
+           
+            Console.WriteLine("ANS(addition) : {0}", a + b);
+        }
+
+         public void substraction()
+        {
+
+            Console.WriteLine("ANS(substraction) : {0}", a - b);
+        }
+    }
+}
+
+-------------------------------------------------------------------------------------------
+
+Prog-6
+
+﻿using System;
+
+namespace ConsoleApp4
+{
+    public interface Shape
+    {
+        void Circle();
+        void Triangle();
+        void Square();
+    }
+    internal class Class6:Shape
+    {
+        double r, b, h, l;
+        public Class6()
+        {
+        }
+        public void getDetails()
+        {
+            Console.WriteLine("Enter Radius of Circle :");
+            r = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Enter Base of Triangle :");
+            b = Convert.ToDouble(Console.ReadLine()); 
+            Console.WriteLine("Enter Height of Triagle :");
+            h = Convert.ToDouble(Console.ReadLine()); 
+            Console.WriteLine("Enter Length of Square :");
+            l = Convert.ToDouble(Console.ReadLine());
+        }
+
+        public void Circle()
+        {
+            Console.WriteLine("Area Of Circle : {0}", 3.14 * r * r);   
+        }
+
+        public void Square()
+        {
+            Console.WriteLine("Area Of Square:{0}", l * l);        
+        }
+
+       public  void Triangle()
+        {
+            Console.WriteLine("Area Of Triangle : {0}", 0.5 * b * h);
+        }
+    }
+}
+
+-------------------------------------------------------------------------------------------
+
+Prog-7
+
+﻿using System;
+
+namespace ConsoleApp4
+{
+     public  class Class7
+    {
+        public Class7()
+        {
+        }
+
+        public void stringMethod(string s)
+        {
+            Console.WriteLine("Original :{0}",s);
+            Console.WriteLine("LOWER :{0}", s.ToLower());
+            Console.WriteLine("LENGTH :{0}", s.Length);
+            Console.WriteLine("REPLACE :{0}", s.Replace("a","i"));
+            Console.WriteLine("UPPER :{0}", s.ToUpper());
+            Console.WriteLine("Original :{0}", s);
+        }
+    }
+}
+
+---------------------------------------------------------------------------------------------
+
+Prog-8
+
+﻿using System;
+using System.Collections.Generic;
+
+namespace ConsoleApp4
+{
+    internal class Class8
+    {
+        public Class8()
+        {
+        }
+        public void toLower(string s)
+        {
+
+            Console.WriteLine("String:{0} ==> LowerCase : {1}",s,s.ToLower());
+        }
+        public void toUpper(string s)
+        {
+            Console.WriteLine("String : {0} ==> UpperCase : {1}", s, s.ToUpper());
+            
+        }
+    }
+}
+
+-----------------------------------------------------------------------------------------------
+
+Prog-9
+
+﻿using System;
+
+namespace ConsoleApp4
+{
+    internal class Class9
+    {
+        string s,word="";
+        int max = 0;
+        public Class9()
+        {
+        }
+        public void getString()
+        {
+            Console.WriteLine("Enter String :");
+            s = Console.ReadLine();
+        }
+        public void findMaxWord()
+        {
+            var str = s.Split(' ');
+            foreach (var item in str)
+            {
+                if (item.Length > max)
+                {
+                    max = item.Length;
+                    word = item;
+                }
+            }
+            Console.WriteLine("Maximum Word: {0}", word);
+        }
+    }
+}
+
+-------------------------------------------------------------------------------------------
+
+Prog-10
+
+using System;
+
+namespace ConsoleApp4
+{
+    internal class Class10
+    {
+        public Class10()
+        {
+        }
+
+        public void invert(string v)
+        {
+            string str = "";
+           var arr = v.ToCharArray();
+            foreach (char c in arr)
+            {
+                if (Char.IsUpper(c))
+                {
+                    str += c.ToString().ToLower();
+                }
+                else
+                {
+                    str += c.ToString().ToUpper();
+                }
+            }
+            Console.WriteLine("Original : {0} ==> Invert : {1}",v,str);
+        }
+    }
+}
